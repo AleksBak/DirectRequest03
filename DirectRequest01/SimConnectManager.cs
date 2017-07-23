@@ -434,14 +434,14 @@ namespace DirectRequest
 
 
 		/// <summary>
-		/// Класс является издателем события об подключении к конечной точке. Этот делегат нужен для генерации события.
+		/// Класс является издателем события об отключении от конечной точки. Этот делегат нужен для генерации события.
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
 		public delegate void DisconnectedEventHandler(object sender, EventArgs e);
 
 		/// <summary>
-		/// Событие в этом классе публикации, что наш клиент подключился к конечной точке.
+		/// Событие в этом классе публикации, что наш клиент отключился от конечной точки.
 		/// </summary>
 		public event DisconnectedEventHandler DisconnectedEvent;
 
