@@ -25,7 +25,7 @@ namespace DirectRequest
 		{
 			InitializeComponent();
 
-			// инициализируем переменную делегата для вызова метода вывода информации об скважине на форме
+			// инициализируем переменную делегата для вызова метода вывода информации полученных данных на форму
 			PrintDataOnFormFunc = new PrintDataOnForm(FillControlsAndProcessingData);
 		}
 
@@ -64,6 +64,7 @@ namespace DirectRequest
 
 				simConnectManager.CloseConnection();
 
+				// отписываемся от событий на которые раннее были подписаны
 				simConnectManager.ConnectedEvent -= SimConnectManager_ConnectedEvent;
 				simConnectManager.DisconnectedEvent -= SimConnectManager_DisconnectedEvent;
 				simConnectManager.UnknownRequestIDEvent -= SimConnectManager_UnknownRequestIDEvent;
@@ -102,6 +103,7 @@ namespace DirectRequest
 				simConnectManager = new SimConnectManager(this.Handle);
 			}
 
+			// подписываемся на соответствующие события
 			simConnectManager.ConnectedEvent += SimConnectManager_ConnectedEvent;
 			simConnectManager.DisconnectedEvent += SimConnectManager_DisconnectedEvent;
 			simConnectManager.UnknownRequestIDEvent += SimConnectManager_UnknownRequestIDEvent;
